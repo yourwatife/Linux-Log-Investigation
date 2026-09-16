@@ -8,8 +8,6 @@ The objective of this investigation was to examine Linux system logs and identif
 
 The investigation was performed as a practical SOC Analyst exercise to understand how Linux logs can be used to investigate security-related events.
 
-⸻
-
 2. Environment
 
 Operating System: Kali Linux
@@ -17,8 +15,6 @@ Environment: Virtual Machine
 Primary User: kali
 Investigation Type: Linux Log Analysis
 Role: Junior SOC Analyst / Security Analyst
-
-⸻
 
 3. Logs Investigated
 
@@ -30,8 +26,6 @@ The investigation focused primarily on:
 * System warnings
 * Login/session events
 * System boot information
-
-⸻
 
 4. Evidence Collection
 
@@ -53,8 +47,6 @@ sudo journalctl -p warning
 
 Used to review system events recorded at warning level.
 
-⸻
-
 5. Investigation Findings
 
 5.1 Successful Authentication
@@ -71,8 +63,6 @@ Finding
 
 A legitimate local user session was identified.
 
-⸻
-
 5.2 Failed Authentication
 
 No failed authentication attempts were identified in the portions of the logs reviewed.
@@ -82,8 +72,6 @@ There was no evidence of repeated failed login attempts or an obvious brute-forc
 Finding
 
 No suspicious failed authentication activity was identified in the reviewed logs.
-
-⸻
 
 5.3 Sudo Activity
 
@@ -103,8 +91,6 @@ Finding
 
 Privilege escalation activity was observed, but it appeared consistent with legitimate administrative activity.
 
-⸻
-
 5.4 Cron Activity
 
 Several CRON sessions were recorded for:
@@ -123,7 +109,6 @@ Finding
 
 No suspicious behavior was identified from the observed Cron sessions.
 
-⸻
 
 6. System Warning Analysis
 
@@ -163,8 +148,6 @@ were observed.
 
 These tools are present in the Kali environment and the messages were related to service initialization rather than evidence that an attacker was using them.
 
-⸻
-
 7. Previous Boot Activity
 
 Some warning events were dated May 18, representing an older system boot.
@@ -182,8 +165,6 @@ Finding
 
 The older boot events did not provide evidence of malicious authentication activity.
 
-⸻
-
 8. Investigation Timeline
 
 Event	Activity	Assessment
@@ -194,8 +175,6 @@ Sept. 15	kali local desktop login	Legitimate local login
 Sept. 15	Multiple sudo sessions	Consistent with administrative investigation
 Sept. 15	Repeated Cron sessions	Scheduled system activity
 Sept. 15	System warnings	Mostly service/VM-related
-
-⸻
 
 9. SOC Analysis
 
@@ -210,7 +189,6 @@ From the available evidence, the following observations were made:
 * Several system warnings were identified, but they did not provide clear evidence of compromise.
 * Older May 18 events were separated from the more recent investigation activity.
 
-⸻
 
 10. Security Assessment
 
@@ -220,7 +198,6 @@ The observed activity was primarily consistent with normal local system usage, s
 
 This assessment is limited to the logs and time periods that were reviewed during this investigation.
 
-⸻
 
 11. SOC Conclusion
 
@@ -230,14 +207,12 @@ The investigation did not identify a confirmed security incident within the revi
 
 The exercise reinforced the importance of:
 
-* Reviewing authentication logs
-* Identifying legitimate versus suspicious sessions
-* Investigating sudo activity
-* Understanding scheduled tasks
-* Separating system errors from security incidents
-* Building a timeline from log evidence
-
-⸻
+Reviewing authentication logs
+Identifying legitimate versus suspicious sessions
+ Investigating sudo activity
+ Understanding scheduled tasks
+ Separating system errors from security incidents
+ Building a timeline from log evidence
 
 12. Evidence / Screenshots
 
@@ -252,28 +227,27 @@ The following screenshots should be added to the GitHub project:
 
 Screenshots should be placed in an evidence/ folder.
 
-⸻
 
 13. Project Skills Demonstrated
 
 Technical Skills
 
-* Linux command line
-* Linux log analysis
-* journalctl
-* Authentication investigation
-* User/session analysis
-* sudo investigation
-* Cron analysis
-* System troubleshooting
-* Security event interpretation
-* SOC-style documentation
+Linux command line
+ Linux log analysis
+journalctl
+Authentication investigation
+User/session analysis
+ sudo investigation
+ Cron analysis
+ System troubleshooting
+ Security event interpretation
+ SOC-style documentation
 
 SOC Skills
 
-* Evidence collection
-* Event analysis
-* Timeline construction
-* Distinguishing normal activity from suspicious activity
-* Documenting security findings
-* Writing an investigation conclusion
+Evidence collection
+Event analysis
+ Timeline construction
+Distinguishing normal activity from suspicious activity
+ Documenting security findings
+ Writing an investigation conclusion
